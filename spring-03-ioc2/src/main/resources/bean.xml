@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user" class="User" >
+<!--        <property name="name"   value="pbb" />-->
+<!--        当使用带参构造方法时，需要使用constructor-arg-->
+<!--        <constructor-arg index="0" value="pbb-第一种方法，下标赋值" /> -->
+<!--        <constructor-arg type="java.lang.String" value="pbb-第二种方法，用数据类型赋值，不建议使用（可能多个参数都是String类型）" />-->
+        <constructor-arg name="name" value="pbb-第三种方法，直接通过参数名，建议使用" />
+    </bean>
+
+</beans>
