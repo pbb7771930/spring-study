@@ -9,7 +9,9 @@ public class MyTest {
         //使用spring容器实例化
         ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
         //输出 "我是User的默认构造方法"，说明spring创建对象同样调用了默认的构造方法
-        User user  = (User) context.getBean("user");
+        //User user  = (User) context.getBean("user");
+        //getBean使用别名alias_user获取bean
+        User user  = (User) context.getBean("alias_user");
         user.show();
     }
 }

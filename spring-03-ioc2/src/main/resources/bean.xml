@@ -10,5 +10,7 @@
 <!--        <constructor-arg type="java.lang.String" value="pbb-第二种方法，用数据类型赋值，不建议使用（可能多个参数都是String类型）" />-->
         <constructor-arg name="name" value="pbb-第三种方法，直接通过参数名，建议使用" />
     </bean>
+    <!-- user的别名-->
+    <alias name="user" alias="alias_user" />
 
 </beans>
