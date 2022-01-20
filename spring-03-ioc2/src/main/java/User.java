@@ -17,7 +17,7 @@ public class User {
      */
     public User(String name){
         this.name = name;
-        System.out.println("我是User的带参数构造方法");
+        System.out.println("我是User的带参数构造方法，输出该处表示该构造方法被调用");
     }
 
 
