@@ -1,8 +1,8 @@
-import dao.UserDao2Impl;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import service.UserService;
 import service.UserServiceImpl;
+
 
 public class MyTest {
     public static void main(String[] args) {

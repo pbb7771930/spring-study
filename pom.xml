@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>spring-ioc-01</module>
+        <module>spring-01-ioc</module>
         <module>spring-02-hello</module>
         <module>spring-03-ioc2</module>
     </modules>

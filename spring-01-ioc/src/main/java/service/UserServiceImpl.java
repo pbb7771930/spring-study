@@ -3,8 +3,9 @@ package service;
 import dao.UserDao;
 import dao.UserDao2Impl;
 import dao.UserDaoImpl;
+import service.UserService;
 
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
     //默认的UserDaoImpl对象
     //UserDao userDao = new UserDaoImpl();
 
