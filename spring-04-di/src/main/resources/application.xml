@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="address" class="pojo.Address"/>
+
+    <!-- 各种类型的值注入示例  -->
+    <bean id="student" class="pojo.Student">
+        <!-- 普通值注入，value-->
+        <property name="name"  value="pbb" />
+
+        <!-- bean注入，ref-->
+        <property name="address" ref="address" />
+
+        <!-- 数组注入，array-->
+        <property name="books" >
+            <array>
+                <value>三国演义</value>
+                <value>西游记</value>
+                <value>红楼梦</value>
+                <value>水浒传</value>
+            </array>
+        </property>
+
+        <!-- map注入，map-->
+        <property name="card" >
+            <map>
+                <entry key="身份证" value="33262584652212" />
+                <entry key="护照" value="69455612" />
+            </map>
+
+        </property>
+
+        <!-- set注入，set-->
+        <property name="games" >
+            <set>
+                <value>LOL</value>
+                <value>WOW</value>
+                <value>BOB</value>
+            </set>
+        </property>
+
+        <!-- list注入，list-->
+        <property name="hobbys" >
+            <list>
+                <value>打篮球</value>
+                <value>踢足球</value>
+                <value>游泳</value>
+            </list>
+        </property>
+
+        <!-- Properties类型注入，props-->
+        <property name="info">
+            <props>
+                <prop key="学号">2016056854</prop>
+                <prop key="性别">男</prop>
+                <prop key="姓名">pbb</prop>
+            </props>
+        </property>
+
+
+        <!-- null值注入，null-->
+        <property name="wife">
+            <null />
+        </property>
+
+    </bean>
+
+</beans>

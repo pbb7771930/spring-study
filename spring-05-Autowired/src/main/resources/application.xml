@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--  开启注解的支持  -->
+    <context:annotation-config/>
+
+    <bean id="cat" class="pojo.Cat" />
+<!--  当有多个bean时，自动装配无法找到对象时，可以使用 @Qualifier(value = "dog1") 指定 -->
+    <bean id="dog1" class="pojo.Dog" />
+    <bean id="dog2" class="pojo.Dog" />
+
+    <!-- 以下为不使用autowire时的配置
+    <bean id="human" class="pojo.Human" >
+        <property name="name" value="pbb" />
+        <property name="cat" ref="cat" />
+        <property name="dog" ref="dog" />
+    </bean>
+    -->
+    <!--
+        使用autowire后，property中不用再配置cat和dog的属性了
+        byName：该装配方式，自动在容器的上下文中查找，和自己对象set方法后面
+            的值对应的beanid，比如setCat,那么就找cat；需要保证所有bean的id唯一，并且
+            这个bean需要和自动注入的属性的set方法的值一致。
+        byType：该装配方式，自动在容器的上下文中查找，和自己对象属性类型相同的bean；
+            需要保证所有的bean的class唯一，并且这个bean需要和自动注入的属性的类型一致。
+    -->
+    <!--
+   <bean id="human" class="pojo.Human" autowire="byName">
+       <property name="name" value="pbb" />
+   </bean>
+    -->
+
+   <!--
+      以下配置为使用@Autowire注解方式，首先要引入以下配置和约束
+        xmlns:context="http://www.springframework.org/schema/context"
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+        <context:annotation-config/>
+        然后在类中的属性或者setXxx方法上加上 @Autowired 注解
+        备注：Resource 用法跟 @Autowired 差不多
+   -->
+    <bean id="human" class="pojo.Human" />
+
+
+
+
+
+</beans>
