@@ -1,6 +1,9 @@
 package demo01;
 
-//真实的房东角色
+/**
+ * @author pbb77
+ */ //真实的房东角色
+
 public class HostMaster implements Host{
 
     @Override
